@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+/* Navbar iconos*/
+
+.iconos-navbar{
+  display: flex;
+  flex-direction: row;
+}
+
+/*tipo de letras*/
+
+.offcanvas-title{
+  font-family: 'Gilda Display', serif;
+}
+.navbar-brand{
+  font-family: 'Gilda Display', serif;
+  
+
+}
+
