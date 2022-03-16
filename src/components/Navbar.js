@@ -1,22 +1,25 @@
 import React from 'react'
+import CartWidjet from './CartWidjet'
+
+
 
 const Navbar = () => {
   return (
     <div>
         <nav className="navbar navbar-dark bg-dark fixed-top">
   <div className="container-fluid">
-    <a className="navbar-brand " href="index.js">GYPSY STORE  </a>
+    <a className="navbar-brand " href="App.js">GYPSY STORE  </a>
+
+
     
     
 
     <div className='iconos-navbar'>
 
-            <button className='icon-shop' type='button'> 
+      <CartWidjet/>
 
-                <a className="redir-page" aria-current="page" href=""> <span className="bi bi-bag"> </span></a>
 
-            </button>
-
+      
             <button className='icon-contacto' type='button'> 
 
                 <a className='contacto-page' href='Contacto.js'> <span className="bi bi-person"> </span> </a>
@@ -53,7 +56,7 @@ const Navbar = () => {
       <div className="offcanvas-body navbar-dark bg-dark">
         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 navbar-dark bg-dark ">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="index.js">Home</a>
+            <a className="nav-link active" aria-current="page" href="Home.js">Home</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="Nosotros.js">Nosotros</a>

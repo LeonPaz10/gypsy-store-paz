@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gilda Display', serif;
+}
 .App {
   text-align: center;
 }
@@ -54,4 +60,11 @@
   
 
 }
+
+.button-gold{
+  border-color: white;
+    background-color: #00000035;
+    color: aliceblue;
+}
+
 
