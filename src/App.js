@@ -1,10 +1,11 @@
 
 import './App.css';
 import Navbar from './components/Navbar';
-import Carrusel from './components/Carrusel'
+
 import ItemListContainer from './components/ItemListContainer';
-import Cont from './components/ItemCount';
 import ItemCount from './components/ItemCount';
+import Boton from './components/Boton';
+
 
 
 
@@ -15,13 +16,18 @@ function App() {
 
       
       <Navbar/>
+     
 
-      <ItemListContainer/>
-
-      <Carrusel/>
+      <ItemListContainer/> 
 
       <ItemCount/>
 
+      
+
+
+      
+
+      
       
       
 

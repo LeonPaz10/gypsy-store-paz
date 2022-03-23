@@ -1,13 +1,12 @@
 import React from 'react'
 import ItemCount from './ItemCount'
+import Boton from './Boton'
+
 
 const ItemListContainer = () => {
   return (
-    <div>
-
-      <ItemCount/>
-
-    </div>
+    
+    <ItemCount/>
   )
 }
 

@@ -1,34 +1,30 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Boton from './Boton'
 
-function ItemCount(){
-
-    const [contador, setContador] = useState(0) 
-    const fechaActual = new Date();
-        return (
-          <div className='cont'>
-              <div>
-                  Remera blanca: {contador}
-              </div>
-{/* 
-              <div>
-
-
-                  {fechaActual.getDate()} / {fechaActual.getMonth()+1} / {fechaActual.getFullYear() } /
-                    Hora : {fechaActual.getHours()} / minutos: {fechaActual.getMinutes()}
-                    / segundos: {fechaActual.getSeconds()}
-
-            </div> */}
-
-            <button onClick={() => setContador(contador + 1)}>Agregar</button>
-            <button onClick={() => setContador(contador - 1)}>Quitar</button>
-
-
-          </div>
-        )
-      
-
+function ItemCount() {
+    const click = () =>{
+        console.log( 'click')
     }
+    const borrarContador = () =>{
+        console.log('borrar')
+    }
+  return (
+      
+    <div className='contenedor-principal'>
 
+        <Boton 
+        texto='agregar'
+        botonDeAdd={true}
+        click={click}/>
 
+        <Boton
+        texto='borrar'
+        botonDeAdd={false}
+        click={borrarContador}/>
+
+     
+    </div>
+  )
+}
 
 export default ItemCount
