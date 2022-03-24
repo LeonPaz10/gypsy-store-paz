@@ -38,7 +38,7 @@ const ItemCount = ({stock, initial, onAdd }) => {
   return (
     <div className='contador mt-4'>
 
-        <h3>Camisa blanca</h3>
+        <h3 className='prenda'>Camisa blanca</h3>
        
         <button className='menos' onClick={() => clickRes('menos')} > - </button>
 
