@@ -3,8 +3,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 
 import ItemListContainer from './components/ItemListContainer';
-import ItemCount from './components/ItemCount';
-import Boton from './components/Boton';
+
+
 
 
 
@@ -20,7 +20,7 @@ function App() {
 
       <ItemListContainer/> 
 
-      <ItemCount/>
+      
 
       
 
