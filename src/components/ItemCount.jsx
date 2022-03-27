@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 
-const ItemCount = ({stock, initial, onAdd }) => {
+const ItemCount = ({stock, onAdd, initial}) => {
+
+ 
 
     const [contador, setContador] = useState(initial);
+    
 
     const clickSum = () => {
        
@@ -36,9 +39,9 @@ const ItemCount = ({stock, initial, onAdd }) => {
 
     }
   return (
-    <div className='contador mt-4'>
+    <div className=''>
 
-        <h3 className='prenda'>Camisa blanca</h3>
+        
        
         <button className='menos' onClick={() => clickRes('menos')} > - </button>
 

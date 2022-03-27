@@ -1,48 +1,95 @@
-import React from 'react'
-import ItemCount from './ItemCount'
+import React, { useState, useEffect } from 'react'
+
 import ItemList from './ItemList'
 
 
 
-const productos = [
-  {
-    nombre: "Producto 1",
-    stock: 5,
-    precio: 25000,
-    img: 'http://assets.stickpng.com/thumbs/580b57fbd9996e24bc43bf78.png'
-  },
-  {
-    nombre: "Producto 2",
-    stock: 2,
-    precio: 26000,
-    img: 'http://assets.stickpng.com/thumbs/580b57fbd9996e24bc43bf78.png'
-  },
-  {
-    nombre: "Producto 3",
-    stock: 10,
-    precio: 30000,
-    img: 'http://assets.stickpng.com/thumbs/580b57fbd9996e24bc43bf78.png'
-  }
-]
-
-const onAdd = (contador) => {
-  console.log('add to cart',contador)
 
 
 
-}
+
+
+
+
+
+
 
 const ItemListContainer = () => {
 
+  const [listaProductos, setListaProductos] = useState([])
+
+  const [cargando, setCargando] = useState(false)
+
+  
+
+  
+
+  
+
+  const productos = [
+    { id:'01',
+      nombre: "Camisa Blanca",
+      stock: 5,
+      initial:1,
+      precio: 13000,
+      img: 'https://w7.pngwing.com/pngs/24/545/png-transparent-t-shirt-sleeve-clothing-collar-shoulder-white-tshirt-tshirt-white-active-shirt.png'
+    },
+    {
+      id:'02',
+      nombre: "Zapatos ",
+      stock: 2,
+      initial:1,
+      precio: 26000,
+      img: 'https://e7.pngegg.com/pngimages/88/948/png-clipart-shoe-shoes-brown-leather-thumbnail.png'
+    },
+    {
+      id:'03',
+      nombre: "Cinto",
+      stock: 10,
+      initial:1,
+      precio: 2000,
+      img: 'https://w7.pngwing.com/pngs/920/15/png-transparent-belt-buckles-product-design-belt-belt-buckle-black-belt-buckles.png'
+    }
+  ]
+  
+  
+const getProducts = new Promise((resolve, reject) => {
+  //acciones
+  let condition=true;
+  if (condition) {
+    setTimeout (() => { 
+      resolve(productos)
+    }, 2000)
+    
+  } else{
+    reject('Error')
+  }
+}) 
+// console.log(getProducts)
+
+useEffect(()=>{
+  setCargando(true)
+  getProducts
+  .then((res) => setListaProductos(res)) 
+  .catch((err) => console.log('error',err))
+  .finally(() => setCargando(false))
+}, [])
+
+
+
+
+
+
   return (
 
-    <div className='container d-flex' style={{ marginTop: '70px' }}>
-      {productos.map((producto, index) =>
-        <ItemList key={index} {...producto} />
-      )
-      }
+    <div >
 
-    </div>
+      {cargando ? <p className='loader ' > Cargando... </p> : <ItemList listaProductos={listaProductos} /> }
+      
+      
+     
+     
+    </div>  
 
 
   )

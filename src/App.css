@@ -81,15 +81,9 @@
   height: 40px;
   width: 30px;
 }
-.contadorSpan{
-  color: aliceblue;
-  font-family: 'Gilda Display', serif;
-  font-size: 1.5rem;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 
- button.addCart{
+
+button.addCart{
   background-color: #00000035;
   border-color: white;
   color: aliceblue;
@@ -99,6 +93,31 @@
 
 }
 
-.prenda{
-  color: aliceblue;
+.contadorSpan{
+  color: black;
+  font-family: 'Gilda Display', serif;
+  font-size: 1.5rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  
 }
+
+.prenda{
+  color: black;
+}
+ .stock{
+  color: black;
+}
+  .precio{
+  color: black;
+}
+
+.listaProductos{
+  display: flex;
+  justify-content: space-around;
+}
+ 
+h1.loader{
+  color:black ;
+}
+  
