@@ -117,7 +117,8 @@ button.addCart{
   justify-content: space-around;
 }
  
-h1.loader{
+.loader{
   color:black ;
+  margin-top: 300px;
 }
-  
+

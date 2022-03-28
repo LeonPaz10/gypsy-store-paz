@@ -43,7 +43,7 @@ const Navbar = () => {
     </div>
 
     
-    <div className="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div className="offcanvas offcanvas-end " tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         
       <div className="offcanvas-header">
         <h5 className="offcanvas-title" id="offcanvasNavbarLabel" >GYPSY STORE </h5>
@@ -64,7 +64,7 @@ const Navbar = () => {
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Ropa
-            </a>
+              </a>
             <ul className="dropdown-menu p-3 mb-2 bg-dark text-white" aria-labelledby="offcanvasNavbarDropdown">
               <li><a className="dropdown-item p-3 mb-2 bg-secondary text-white" href="#">Mujer</a></li>
               <li><a className="dropdown-item p-3 mb-2 bg-secondary text-white" href="#">Hombre</a></li>
