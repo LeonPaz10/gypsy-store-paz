@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import CartWidjet from './CartWidjet'
 
 
@@ -8,7 +9,7 @@ const Navbar = () => {
     <div>
         <nav className="navbar navbar-dark bg-dark fixed-top">
   <div className="container-fluid">
-    <a className="navbar-brand " href="App.js">GYPSY STORE  </a>
+    <Link className="navbar-brand " to="/">GYPSY STORE  </Link>
 
 
     
@@ -22,13 +23,13 @@ const Navbar = () => {
       
             <button className='icon-contacto' type='button'> 
 
-                <a className='contacto-page' href='Contacto.js'> <span className="bi bi-person"> </span> </a>
+                <Link className='contacto-page' to='/contacto'> <span className="bi bi-person"> </span> </Link>
             
 
             </button>
 
             <button className='icon-ubi' type='button'> 
-            <a className='ubi-page' href='https://www.google.com.ar/maps/place/Kevingston/@-34.7839839,-58.8748599,13z/data=!4m8!1m2!2m1!1sropa+deportiva!3m4!1s0x95bcec034f1a5ea9:0xa615311817281176!8m2!3d-34.7839835!4d-58.8398419'> <span className="bi bi-geo-alt"> </span> </a>
+            <Link className='ubi-page' to='https://www.google.com.ar/maps/place/Kevingston/@-34.7839839,-58.8748599,13z/data=!4m8!1m2!2m1!1sropa+deportiva!3m4!1s0x95bcec034f1a5ea9:0xa615311817281176!8m2!3d-34.7839835!4d-58.8398419'> <span className="bi bi-geo-alt"> </span> </Link>
             
 
             </button>
@@ -56,24 +57,12 @@ const Navbar = () => {
       <div className="offcanvas-body navbar-dark bg-dark">
         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 navbar-dark bg-dark ">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="Home.js">Home</a>
+            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="Nosotros.js">Nosotros</a>
+            <Link className="nav-link" to="/contacto">Contacto</Link>
           </li>
-          <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Ropa
-              </a>
-            <ul className="dropdown-menu p-3 mb-2 bg-dark text-white" aria-labelledby="offcanvasNavbarDropdown">
-              <li><a className="dropdown-item p-3 mb-2 bg-secondary text-white" href="#">Mujer</a></li>
-              <li><a className="dropdown-item p-3 mb-2 bg-secondary text-white" href="#">Hombre</a></li>
-              <li>
-                <hr className="dropdown-divider"/>
-              </li>
-              
-            </ul>
-          </li>
+         
         </ul>
        
       </div>

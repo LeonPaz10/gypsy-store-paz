@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 
 
 import ItemList from './ItemList'
@@ -7,6 +8,8 @@ import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
 
 import { getProducts } from './mocks/Fake';
+
+
 
 // Can be a string as well. Need to ensure each key-value pair ends with ;
 const override = css`
@@ -23,34 +26,32 @@ const override = css`
 
 
 
-
-
-
-
-const ItemListContainer = () => {
-
-  const [listaProductos, setListaProductos] = useState([])
-
-  const [cargando , setCargando] = useState(false)
-  let [color ] = useState("grey");
-
+function ItemListContainer() {
   
-
-  
-
-  
-
-// console.log(getProducts)
+const params = useParams()
+console.log(params)
 
 
+  const [listaProductos, setListaProductos] = useState([]);
 
-useEffect(()=>{
-  setCargando(true)
-  getProducts
-  .then((res) => setListaProductos(res)) 
-  .catch((err) => console.log('error',err))
-  .finally(() => setCargando(false))
-}, [])
+  const [cargando, setCargando] = useState(false);
+  let [color] = useState("grey");
+
+
+
+
+
+
+
+
+  // console.log(getProducts)
+  useEffect(() => {
+    setCargando(true);
+    getProducts
+      .then((res) => setListaProductos(res))
+      .catch((err) => console.log('error', err))
+      .finally(() => setCargando(false));
+  }, []);
 
 
 
@@ -59,17 +60,17 @@ useEffect(()=>{
 
   return (
 
-    <div >
+    <div>
 
-      {cargando ? <PropagateLoader color={color} loading={cargando} css={override} size={15} />  : <ItemList listaProductos={listaProductos} /> }
-      
-      
-     
-     
-    </div>  
+      {cargando ? <PropagateLoader color={color} loading={cargando} css={override} size={15} /> : <ItemList listaProductos={listaProductos} />}
 
 
-  )
+
+
+    </div>
+
+
+  );
 }
 
 export default ItemListContainer

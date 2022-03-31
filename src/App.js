@@ -5,7 +5,10 @@ import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
 
 import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
+
+import { BrowserRouter, Routes, Route  } from 'react-router-dom';
+import Contacto from './components/Contacto';
+
 
 
 
@@ -15,16 +18,33 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   return (
+    <BrowserRouter>
+
     <div className="App">
 
-      
-      <Navbar/>
+    <Navbar/>
      
 
-      <ItemListContainer/> 
+     <Routes>
 
-      <ItemDetailContainer/>
+       <Route path='/' element={<ItemListContainer/> }/>
+       
+       <Route path='/category/:categoryId' element={<ItemListContainer/> }/>
 
+
+
+
+
+       <Route path='/contacto' element={<Contacto/> }/>
+      
+      <Route path='*' element={<h1>Error 404</h1>}/>
+ 
+     </Routes>
+
+     
+      </div>
+
+      
       
 
       
@@ -39,7 +59,7 @@ function App() {
       
       
     
-    </div>
+    </BrowserRouter>
     
   );
 }

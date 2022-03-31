@@ -1,9 +1,11 @@
 import React from 'react'
-import ItemCount from './ItemCount'
+import Card from 'react-bootstrap/Card'
+import { Button } from 'react-bootstrap'
 
  
  const item = ({producto}) => {
 
+    // eslint-disable-next-line no-unused-vars
     const onAdd = (contador) => {
     console.log(`Agregado al carrito, ${contador} ${producto.nombre}`);
     }
@@ -13,18 +15,23 @@ import ItemCount from './ItemCount'
     
     
   return (
-    <div className="card container-fluid " style={{width: '15rem' }}>
-    <img src={producto.img} className="card-img-top" alt={producto.nombre}/>
-    <div className="card-body ">
-      <h5 className="card-title">{producto.nombre}</h5>
-      <p className="card-text"> $ {producto.precio}</p>
-      <p className="card-text"> Stock: {producto.stock}</p>
-      
-      <a href="#" ><ItemCount onAdd={onAdd} stock={producto.stock} initial={1} /></a>
 
-      
-    </div>
-  </div>
+    <Card style={{ width: '16rem', margin: '12px' }}>
+            <Card.Img variant="top" src={producto.img} />
+            <Card.Body>
+                <Card.Title>{producto.nombre}</Card.Title>
+                <Card.Text>
+                    {producto.description}
+                </Card.Text>
+                <Card.Text>
+                    Precio: ${producto.precio}
+                </Card.Text>
+                
+                    <Button variant="primary">Ver más</Button>
+                
+            </Card.Body>
+        </Card>
+
   )
 }
 
