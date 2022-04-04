@@ -7,7 +7,7 @@
       precio: 13000,
       description: "Camisa de manga corta, de color blanco, con mangas y bolsillos",
       img: 'https://w7.pngwing.com/pngs/24/545/png-transparent-t-shirt-sleeve-clothing-collar-shoulder-white-tshirt-tshirt-white-active-shirt.png',
-      category:'remera'
+      category:'remeras'
     },
     {
       id:'02',

@@ -6,6 +6,8 @@
 }
 .App {
   text-align: center;
+  
+  height: 100vh;
 }
 
 .App-logo {
@@ -48,6 +50,7 @@
 .iconos-navbar{
   display: flex;
   flex-direction: row;
+  background-color: #282c34;
 }
 
 /*tipo de letras*/
@@ -71,6 +74,7 @@
   font-family: 'Gilda Display', serif;
   font-size: 1.5rem;
   padding-top: 50px;
+
 }
 
 .mas{
@@ -84,7 +88,7 @@
 
 
 button.addCart{
-  background-color: #00000035;
+  background-color: black;
   border-color: white;
   color: aliceblue;
   font-family: 'Gilda Display', serif;
@@ -125,4 +129,13 @@ button.addCart{
 .contacto{
   background-color: #61dafb;
   padding-top: 4rem;
+}
+
+.iconos-navbar{
+  background-color: #282c34;
+}
+
+.verMas{
+ display: flex;
+ justify-content: center;
 }

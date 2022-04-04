@@ -7,7 +7,7 @@ import CartWidjet from './CartWidjet'
 const Navbar = () => {
   return (
     <div>
-        <nav className="navbar navbar-dark bg-dark fixed-top">
+        <nav className="navbar navbar-dark bg-dark fixed-top  container-fluid">
   <div className="container-fluid">
     <Link className="navbar-brand " to="/">GYPSY STORE  </Link>
 
@@ -28,7 +28,7 @@ const Navbar = () => {
 
             </button>
 
-            <button className='icon-ubi' type='button'> 
+            <button className='icon-ubi ml-4' type='button'> 
             <Link className='ubi-page' to='https://www.google.com.ar/maps/place/Kevingston/@-34.7839839,-58.8748599,13z/data=!4m8!1m2!2m1!1sropa+deportiva!3m4!1s0x95bcec034f1a5ea9:0xa615311817281176!8m2!3d-34.7839835!4d-58.8398419'> <span className="bi bi-geo-alt"> </span> </Link>
             
 
@@ -59,9 +59,16 @@ const Navbar = () => {
           <li className="nav-item">
             <Link className="nav-link active" aria-current="page" to="/">Home</Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/contacto">Contacto</Link>
-          </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/category/remeras">remeras</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/category/zapatos">zapatos</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/category/cintos">cintos</Link>
+            </li>
+         
          
         </ul>
        

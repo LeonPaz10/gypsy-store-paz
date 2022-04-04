@@ -8,6 +8,7 @@ import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
 
 import { getProducts } from './mocks/Fake';
+import ItemCount from './ItemCount';
 
 
 
@@ -26,10 +27,11 @@ const override = css`
 
 
 
-function ItemListContainer() {
+function ItemListContainer() { 
   
-const params = useParams()
-console.log(params)
+  
+const {categoryId} = useParams()
+
 
 
   const [listaProductos, setListaProductos] = useState([]);
@@ -48,10 +50,17 @@ console.log(params)
   useEffect(() => {
     setCargando(true);
     getProducts
-      .then((res) => setListaProductos(res))
+      .then((res) =>{
+        if(categoryId){
+          setListaProductos(res.filter(producto => producto.category === categoryId))
+        }else{
+          setListaProductos (res)
+        }
+ 
+      })
       .catch((err) => console.log('error', err))
       .finally(() => setCargando(false));
-  }, []);
+  }, [categoryId]);
 
 
 
@@ -63,6 +72,7 @@ console.log(params)
     <div>
 
       {cargando ? <PropagateLoader color={color} loading={cargando} css={override} size={15} /> : <ItemList listaProductos={listaProductos} />}
+      
 
 
 
