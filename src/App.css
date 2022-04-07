@@ -139,3 +139,11 @@ button.addCart{
  display: flex;
  justify-content: center;
 }
+
+/* .boton{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 250px ;
+  justify-content: center;
+} */
