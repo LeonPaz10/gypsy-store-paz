@@ -70,11 +70,17 @@ const ItemDetail = ({productDetail}) => {
                     {description} 
                 </Card.Text>
 
-                <Select
+                <Card.Text>
+                   <h6>Stock: {stock} </h6>  
+                </Card.Text>
+
+
+
+                {/* <Select
                 options={options}
                 onSelect={setTalle}
 
-                />
+                /> */}
 
                 <span><ItemCount initial={initial} stock={stock} onAdd={onAdd}/></span>
 
