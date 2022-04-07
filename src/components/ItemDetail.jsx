@@ -1,19 +1,58 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ItemCount from './ItemCount'
 import { Card } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+
+import { Link, useNavigate } from 'react-router-dom';
+import Select from './Select';
+
+
 
 const ItemDetail = ({productDetail}) => {
+
+  const options =[
+    {value: 'xl' ,text: 'xl'},
+    {value: 'l', text: 'l'},
+    {value: 'm',text: 'm'},
+  ]
+  
+
+  const [talle, setTalle]= useState('xl')
+
+  // const [isMobile, setIsMobile] = useState(false)
+
+  // const checkIsMobile = () => {
+  //   console.log(window.visualViewport.width)
+  //   if (window.visualViewport.width <= 552) {
+  //     setIsMobile(true)
+  //   }else{
+  //     setIsMobile(false)
+  //   }
+  // }
+
+  // useEffect(() =>{
+  //   checkIsMobile()
+  //   window.addEventListener('resize', checkIsMobile)
+  //   return () => {
+  //     window.removeEventListener('resize', checkIsMobile)
+  //   }
+  // },[])
+
+
   const initial=1;
 
-   const onAdd = (contador) => {
-    console.log(`Agregado al carrito, ${contador} ${productDetail.nombre}`);
+  const onAdd = (contador) => {
+    console.log(`Agregado al carrito,  ${productDetail.id}  ${productDetail.nombre} ${productDetail.precio} ${contador} `);
   }
+
 
   
     
-    const {nombre, description, img, precio, stock} = productDetail
+  const {nombre, description, img, precio, stock, id } = productDetail
+
+  const navigate = useNavigate()
+  const handleNavigate = () =>{
+      navigate(-1)
+    }
   return (
    <div className='d-flex verMas' >
      
@@ -31,13 +70,29 @@ const ItemDetail = ({productDetail}) => {
                     {description} 
                 </Card.Text>
 
+                <Select
+                options={options}
+                onSelect={setTalle}
+
+                />
+
                 <span><ItemCount initial={initial} stock={stock} onAdd={onAdd}/></span>
+
+
+                <button className='btn btn-outline-primary' onClick={handleNavigate}>Volver</button>
+
+
                 
             
                     
                  
             </Card.Body>
         </Card>
+{/* 
+        {isMobile
+        ? <button className=' btn btn-outline-primary align-self-center'> Descarga Gypsy Store en tu celular!</button>
+        : <button className='btn btn-outline-dark align-self-center align-content-lg-end'>Descarga Gypsy Store en tu computadora!</button>
+        } */}
    </div>
     
   )
