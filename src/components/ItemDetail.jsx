@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ItemCount from './ItemCount'
 import { Card } from 'react-bootstrap';
-
+import { CartContext } from './CartContext';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import item from './Item';
 
 
 
 
 const ItemDetail = ({productDetail}) => {
 
-  const initial = 1;
+  const  {cart, addItem, isInCart} = useContext(CartContext); 
+  console.log( isInCart (...cart, item));
+
+  const initial = 1; 
 
   const [contador, setContador] = useState(initial);
 
@@ -28,10 +33,10 @@ const ItemDetail = ({productDetail}) => {
       precio,
       description,
       img,
-      contador,
+      cantidad: contador,
 
     }
-    console.log(itemToAdd);
+    addItem(itemToAdd);
     
   }
  
@@ -71,18 +76,23 @@ const ItemDetail = ({productDetail}) => {
                 </Card.Text>
 
                 <Card.Text>
-                   <h6>Stock: {stock} </h6>  
+                   <h6>Stock disponible: {stock} </h6>  
                 </Card.Text>
 
 
 
-                {/* <Select
-                options={options}
-                onSelect={setTalle}
+               {
+                 !isInCart(id) ?
+                  <ItemCount  onAdd={addToCart} initial={initial} 
+                 stock={stock} contador={contador} setContador={setContador}/>
+                 :<Link to="/cart" className='btn btn-danger'> Terminar mi compra</Link>
 
-                /> */}
+               }
 
-                <span><ItemCount  onAdd={addToCart} initial={initial} stock={stock} contador={contador} setContador={setContador}/></span>
+                
+                
+                
+                <hr />
 
 
                 <button className='btn btn-outline-primary' onClick={handleNavigate}>Volver</button>

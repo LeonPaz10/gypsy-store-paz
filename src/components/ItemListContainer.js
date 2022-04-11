@@ -8,7 +8,7 @@ import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
 
 import { getProducts } from './mocks/Fake';
-import ItemCount from './ItemCount';
+
 
 
 

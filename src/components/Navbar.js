@@ -17,23 +17,10 @@ const Navbar = () => {
 
     <div className='iconos-navbar'>
 
-      <CartWidjet/>
+ <CartWidjet/>
 
 
       
-            <button className='icon-contacto' type='button'> 
-
-                <Link className='contacto-page' to='/contacto'> <span className="bi bi-person"> </span> </Link>
-            
-
-            </button>
-
-            <button className='icon-ubi ml-4' type='button'> 
-            <Link className='ubi-page' to='https://www.google.com.ar/maps/place/Kevingston/@-34.7839839,-58.8748599,13z/data=!4m8!1m2!2m1!1sropa+deportiva!3m4!1s0x95bcec034f1a5ea9:0xa615311817281176!8m2!3d-34.7839835!4d-58.8398419'> <span className="bi bi-geo-alt"> </span> </Link>
-            
-
-            </button>
-            
             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span className="navbar-toggler-icon"></span>
             

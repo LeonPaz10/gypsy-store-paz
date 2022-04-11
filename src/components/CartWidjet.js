@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useContext }  from 'react'
 import { Link } from 'react-router-dom'
+import {BsFillCartFill} from 'react-icons/bs'
+import { CartContext } from './CartContext'
+
 
 const CartWidjet = () => {
+  const {cartQuantity} = useContext(CartContext)
   return (
     
-        <button className='icon-shop ' type='button'> 
+        <Link to="/cart" className='cart-widget'>
 
-            <Link className="redir-page " aria-current="page" to=""> <span className="bi bi-bag"> </span></Link>
+         <BsFillCartFill/>
 
-        </button>
-        
+         <span> {cartQuantity()} </span>
+
+        </Link>
     
   )
 }

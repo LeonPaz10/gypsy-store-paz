@@ -147,3 +147,10 @@ button.addCart{
   width: 250px ;
   justify-content: center;
 } */
+
+.cart-widget{
+  font-size: 35px;
+  padding-left: 5px;
+  padding-right: 5px;
+   
+}
