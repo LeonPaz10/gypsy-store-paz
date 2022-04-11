@@ -2,52 +2,52 @@ import React, { useEffect, useState } from 'react'
 import ItemCount from './ItemCount'
 import { Card } from 'react-bootstrap';
 
-import { Link, useNavigate } from 'react-router-dom';
-import Select from './Select';
+import { useNavigate } from 'react-router-dom';
+
 
 
 
 const ItemDetail = ({productDetail}) => {
 
-  const options =[
-    {value: 'xl' ,text: 'xl'},
-    {value: 'l', text: 'l'},
-    {value: 'm',text: 'm'},
-  ]
+  const initial = 1;
+
+  const [contador, setContador] = useState(initial);
+
+  const {nombre, description, img, precio, stock, id} = productDetail
+
+
+
+ 
+
+  
+  const addToCart = () => {
+    const itemToAdd ={
+
+      id,
+      nombre,
+      precio,
+      description,
+      img,
+      contador,
+
+    }
+    console.log(itemToAdd);
+    
+  }
+ 
   
 
-  const [talle, setTalle]= useState('xl')
+  
 
-  // const [isMobile, setIsMobile] = useState(false)
-
-  // const checkIsMobile = () => {
-  //   console.log(window.visualViewport.width)
-  //   if (window.visualViewport.width <= 552) {
-  //     setIsMobile(true)
-  //   }else{
-  //     setIsMobile(false)
-  //   }
-  // }
-
-  // useEffect(() =>{
-  //   checkIsMobile()
-  //   window.addEventListener('resize', checkIsMobile)
-  //   return () => {
-  //     window.removeEventListener('resize', checkIsMobile)
-  //   }
-  // },[])
+  
 
 
-  const initial=1;
-
-  const onAdd = (contador) => {
-    console.log(`Agregado al carrito,  ${productDetail.id}  ${productDetail.nombre} ${productDetail.precio} ${contador} `);
-  }
+ 
 
 
   
     
-  const {nombre, description, img, precio, stock, id } = productDetail
+  
 
   const navigate = useNavigate()
   const handleNavigate = () =>{
@@ -82,7 +82,7 @@ const ItemDetail = ({productDetail}) => {
 
                 /> */}
 
-                <span><ItemCount initial={initial} stock={stock} onAdd={onAdd}/></span>
+                <span><ItemCount  onAdd={addToCart} initial={initial} stock={stock} contador={contador} setContador={setContador}/></span>
 
 
                 <button className='btn btn-outline-primary' onClick={handleNavigate}>Volver</button>

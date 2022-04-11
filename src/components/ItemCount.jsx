@@ -1,44 +1,37 @@
-import React, { useState } from 'react'
+import { useState } from 'react';
 import { Button } from 'react-bootstrap'
 
-const ItemCount = ({stock, onAdd, initial}) => {
+const ItemCount = ({onAdd, initial, stock, contador, setContador}) => {
+
+  
+
+  const clickSum = () => {
+     
+    if (contador === stock) {
+        return;
+        
+    }
+    
+        setContador(contador + 1);
+    
+        
+    
+};
+
+const clickRes = () => {
+    if (contador === initial) {
+        return;
+    }
+  
+        setContador(contador - 1);
+    
+        
+    
+};
+
 
  
 
-    const [contador, setContador] = useState(initial);
-    
-
-    const clickSum = () => {
-       
-        if (contador === stock) {
-            return;
-            
-        }
-        
-            setContador(contador + 1);
-        
-            
-        
-    };
-
-    const clickRes = () => {
-        if (contador === initial) {
-            return;
-        }
-      
-            setContador(contador - 1);
-        
-            
-        
-    };
-
-
-    
-    const addToCart = () => {
-
-      onAdd(contador);
-
-    }
   return (
     <div className=''>
 
@@ -54,7 +47,7 @@ const ItemCount = ({stock, onAdd, initial}) => {
         <Button   className='mas' onClick={() => clickSum('suma')} variant="primary">+</Button>
         
         <hr />
-        <Button variant="outline-dark" className='addCart' onClick={() => addToCart('')}> Agregar al carrito</Button>{' '}
+        <Button variant="outline-dark" className='addCart' onClick={() => onAdd('')}> Agregar al carrito</Button>{' '}
         <hr />
        
       
