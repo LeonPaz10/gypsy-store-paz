@@ -79,9 +79,23 @@ const ItemDetail = ({productDetail}) => {
                    <h6>Stock disponible: {stock} </h6>  
                 </Card.Text>
 
+                {stock === 0 && <h6 style={{color: 'red', fontWeight: '700'}}>Producto agotado  </h6>}
+
+                {
+                  stock > 0 &&
+                  <>
+                  {stock <= 5  && <h6 style={{color: 'red', fontWeight: '700'}}>Ultimas unidades!  </h6>}
+
+
+                  </>
+                }	
+
+
+                
 
 
                {
+                  stock > 0 &&
                  !isInCart(id) ?
                   <ItemCount  onAdd={addToCart} initial={initial} 
                  stock={stock} contador={contador} setContador={setContador}/>

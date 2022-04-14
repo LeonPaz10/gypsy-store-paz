@@ -12,7 +12,7 @@
     {
       id:'02',
       nombre: "Zapatos ",
-      stock: 2,
+      stock: 0,
       initial:1,
       precio: 26000,
       description: "Zapatos de color negro",

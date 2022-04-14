@@ -13,6 +13,8 @@ const ItemCount = ({onAdd, initial, stock, contador, setContador}) => {
     }
     
         setContador(contador + 1);
+
+        
     
         
     

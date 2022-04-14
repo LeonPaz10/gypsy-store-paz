@@ -9,7 +9,20 @@ const Cart = () => {
     console.log(cart)
     return(
         <div  className="container my-5">
-            <h2 className="container compra">Tu compra!</h2>
+
+            {
+                cart.length === 0?
+                 <div>
+                    <h2 className="text-center  my-5 pt-5">Tu carrito esta vacio :(</h2>
+                    <hr />
+
+                    <h4>Volver para seguir comprando!</h4>
+                  
+                   <Link to={"/"} className="btn btn-primary">Volver</Link>
+                 </div>
+                 : 
+                 <>
+                   <h2 className="container compra">Tu compra!</h2>
             <hr />
             {
                 cart.map((item)=> (
@@ -35,6 +48,12 @@ const Cart = () => {
                     <span>Seguir comprando</span>
 
                 </Link>
+                <br />
+                <br />
+                 </>
+            }
+
+          
         </div>
     )
 }
