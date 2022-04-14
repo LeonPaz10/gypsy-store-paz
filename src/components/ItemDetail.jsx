@@ -39,6 +39,8 @@ const ItemDetail = ({productDetail}) => {
     addItem(itemToAdd);
     
   }
+  
+  
  
   
 
@@ -96,13 +98,20 @@ const ItemDetail = ({productDetail}) => {
 
                {
                   stock > 0 &&
-                 !isInCart(id) ?
-                  <ItemCount  onAdd={addToCart} initial={initial} 
-                 stock={stock} contador={contador} setContador={setContador}/>
-                 :<Link to="/cart" className='btn btn-danger'> Terminar mi compra</Link>
+                  <>
+                  {
+                          !isInCart(id) ?
+                          <ItemCount  onAdd={addToCart} initial={initial} 
+                         stock={stock} contador={contador} setContador={setContador}/>
+                         :<Link to="/cart" className='btn btn-danger'> Terminar mi compra</Link>
+                  }
+                 
+                  </>
+            
 
                }
-
+                
+             
                 
                 
                 
