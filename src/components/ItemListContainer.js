@@ -6,8 +6,10 @@ import ItemList from './ItemList'
 import { css } from "@emotion/react";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../firebase/config';
 
-import { getProducts } from './mocks/Fake';
+
 
 
 
@@ -49,17 +51,19 @@ const {categoryId} = useParams()
   // console.log(getProducts)
   useEffect(() => {
     setCargando(true);
-    getProducts
-      .then((res) =>{
-        if(categoryId){
-          setListaProductos(res.filter(producto => producto.category === categoryId))
-        }else{
-          setListaProductos (res)
-        }
- 
-      })
-      .catch((err) => console.log('error', err))
-      .finally(() => setCargando(false));
+
+  // armar la referencia
+  const productosRef = collection(db, 'productos');
+  const q = categoryId ? query(productosRef, where('category', '==', categoryId)) : productosRef;
+  //llamar la ref async 
+  getDocs(q)
+  .then(resp =>{
+    const items = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}));
+    console.log(items) 
+    setListaProductos(items)
+  })
+  .finally(() => setCargando(false))  
+    
   }, [categoryId]);
 
 

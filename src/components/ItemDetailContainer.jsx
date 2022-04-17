@@ -1,27 +1,35 @@
 import React, { useEffect, useState } from 'react'
-import { getProducts } from './mocks/Fake'
+
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
+import { db } from '../firebase/config'
+import {doc, getDoc} from 'firebase/firestore'
 
 
 
 const ItemDetailContainer = () => {
     const[productDetail, setProductDetail] = useState(null)
     const [cargando, setCargando] = useState(true )
-    const {itemId}= useParams()
+    const {itemId}= useParams( )
     
 
 
 
     useEffect(() => {
         setCargando(true);
-        getProducts
-        .then((res) => {
-          setProductDetail(res.find(producto => producto.id === itemId))
-        })
-        .catch((err) => console.log(err))
-        .finally(() => setCargando(false));
+       
+         const docRef = doc(db, 'productos', itemId)
+         getDoc(docRef) 
+         .then(doc =>{
+           setProductDetail({id: doc.id, ...doc.data()})
+         })
+
+         .finally(() => setCargando(false))
+
+         
+
+
     }, [itemId])
   return (
     <Container  className='mt-5' > 

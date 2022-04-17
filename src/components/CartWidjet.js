@@ -12,7 +12,7 @@ const CartWidjet = () => {
 
          <BsFillCartFill/>
 
-         <span> {cartQuantity()} </span>
+         <span> {cartQuantity() || ''} </span>
 
         </Link>
     
