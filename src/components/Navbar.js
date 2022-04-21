@@ -9,13 +9,10 @@ const Navbar = () => {
     <div>
         <nav className="navbar navbar-dark bg-dark fixed-top  container-fluid">
   <div className="container-fluid">
+    
     <Link className="navbar-brand " to="/">GYPSY STORE  </Link>
 
-
-    
-    
-
-    <div className='iconos-navbar'>
+   <div className='iconos-navbar'>
 
  <CartWidjet/>
 

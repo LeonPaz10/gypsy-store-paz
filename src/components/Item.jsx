@@ -32,7 +32,7 @@ import { Link } from 'react-router-dom'
                     {producto.description} 
                 </Card.Text>
                 
-                   <Link to={`/detail/${producto.id}`}><Button variant="primary">Ver más</Button> </Link> 
+                   <Link to={`/item/${producto.id}`}><Button variant="primary">Ver más</Button> </Link> 
                     
                  
             </Card.Body>

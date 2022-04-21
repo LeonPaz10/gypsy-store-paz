@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-
-
 import ItemList from './ItemList'
 import { css } from "@emotion/react";
-
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase/config';
-
-
-
-
 
 
 // Can be a string as well. Need to ensure each key-value pair ends with ;
@@ -22,33 +15,15 @@ const override = css`
   margin-top: 250px;
 `;
 
-
-
-
-
-
-
-
 function ItemListContainer() { 
   
   
 const {categoryId} = useParams()
-
-
-
-  const [listaProductos, setListaProductos] = useState([]);
+const [listaProductos, setListaProductos] = useState([]);
 
   const [cargando, setCargando] = useState(false);
   let [color] = useState("grey");
 
-
-
-
-
-
-
-
-  // console.log(getProducts)
   useEffect(() => {
     setCargando(true);
 
@@ -65,12 +40,6 @@ const {categoryId} = useParams()
   .finally(() => setCargando(false))  
     
   }, [categoryId]);
-
-
-
-
-
-
   return (
 
     <div>

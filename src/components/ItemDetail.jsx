@@ -19,12 +19,6 @@ const ItemDetail = ({productDetail}) => {
   const [contador, setContador] = useState(initial);
 
   const {nombre, description, img, precio, stock, id} = productDetail
-
-
-
- 
-
-  
   const addToCart = () => {
     const itemToAdd ={
 
@@ -39,23 +33,6 @@ const ItemDetail = ({productDetail}) => {
     addItem(itemToAdd);
     
   }
-  
-  
- 
-  
-
-  
-
-  
-
-
- 
-
-
-  
-    
-  
-
   const navigate = useNavigate()
   const handleNavigate = () =>{
       navigate(-1)
@@ -91,12 +68,7 @@ const ItemDetail = ({productDetail}) => {
 
                   </>
                 }	
-
-
-                
-
-
-               {
+                {
                   stock > 0 &&
                   <>
                   {
@@ -110,23 +82,13 @@ const ItemDetail = ({productDetail}) => {
             
 
                }
-                
-             
-                
-                
-                
-                <hr />
+               <hr />
 
 
                 <button className='btn btn-outline-primary' onClick={handleNavigate}>Volver</button>
-
-
                 
-            
-                    
-                 
-            </Card.Body>
-        </Card>
+                </Card.Body>
+                 </Card>
 {/* 
         {isMobile
         ? <button className=' btn btn-outline-primary align-self-center'> Descarga Gypsy Store en tu celular!</button>

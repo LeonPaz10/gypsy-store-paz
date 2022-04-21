@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
@@ -12,11 +11,7 @@ const ItemDetailContainer = () => {
     const[productDetail, setProductDetail] = useState(null)
     const [cargando, setCargando] = useState(true )
     const {itemId}= useParams( )
-    
-
-
-
-    useEffect(() => {
+      useEffect(() => {
         setCargando(true);
        
          const docRef = doc(db, 'productos', itemId)

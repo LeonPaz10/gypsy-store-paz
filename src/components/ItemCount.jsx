@@ -2,9 +2,6 @@
 import { Button } from 'react-bootstrap'
 
 const ItemCount = ({onAdd, initial, stock, contador, setContador}) => {
-
-  
-
   const clickSum = () => {
      
     if (contador === stock) {
@@ -13,11 +10,6 @@ const ItemCount = ({onAdd, initial, stock, contador, setContador}) => {
     }
     
         setContador(contador + 1);
-
-        
-    
-        
-    
 };
 
 const clickRes = () => {
@@ -26,21 +18,11 @@ const clickRes = () => {
     }
   
         setContador(contador - 1);
-    
-        
-    
-};
-
-
- 
-
-  return (
+      };
+      return (
     <div className=''>
-
-        
-       
       
-        <Button  className='menos' onClick={() => clickRes('menos')} variant="primary">-</Button>
+      <Button  className='menos' onClick={() => clickRes('menos')} variant="primary">-</Button>
 
 
         <span className='contadorSpan'>{contador}</span>
