@@ -1,16 +1,16 @@
 import { useContext } from "react";
-import { CartContext } from "./CartContext";
+import { CartContext} from "./CartContext";
 import { useState } from "react";
 import db from "../firebase/config";
-import { collection, addDoc, doc } from "firebase/firestore";
+import { collection, addDoc, doc, Timestamp, updateDoc, getDoc } from "firebase/firestore";
+import { Link, Navigate } from "react-router-dom";
 
 const Checkout = () =>{
 
-    const {cart, cartTotal} = useContext(CartContext);
+    const {cart, cartTotal, vaciarCarrito} = useContext(CartContext);
 
-    // const [nombre, setNombre] = useState('');
-    // const [mail, setMail] = useState('');
-    // const [telefono, setTelefono] = useState('');
+    const [orderId, setOrderId] = useState(null);
+   
 
 
     const [values, setValues] = useState({
@@ -39,17 +39,43 @@ const Checkout = () =>{
                 nombre: values.nombre,
                 email: values.mail,
                 telefono: values.telefono
-            }
+            },
+            fyh: Timestamp.fromDate(new Date())
         }
         console.log("Orden enviada");
       
 
         const ordersRef = collection(db, 'orders');
 
+        cart.forEach((item) => {
+            const docRef = doc(db, 'productos', item.id);
+
+            getDoc(docRef)
+            .then((doc) => {
+                 updateDoc(docRef,{
+                    stock: doc.data().stock - item.cantidad
+
+                 })
+            })
+        });
+
         addDoc(ordersRef, orden)
         .then((doc) =>{
             console.log(doc);
+            setOrderId(doc.id);
+            vaciarCarrito();
         })
+    }
+    if (orderId){
+        return <div className="container my-5 oe">
+            <h1>Orden enviada, gracias por tu compra</h1>
+            <h3>Tu orden es la siguiente: {orderId}</h3>
+            <Link to="/" className="btn btn-primary">Volver al inicio</Link>
+        </div>
+
+    }
+    if(cart.length === 0){
+        return <Navigate to={'/'} />
     }
     return(
         <div>
