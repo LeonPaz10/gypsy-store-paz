@@ -2,14 +2,29 @@ import { useContext } from "react";
 import { CartContext} from "./CartContext";
 import { useState } from "react";
 import db from "../firebase/config";
-import { collection, addDoc, doc, Timestamp, updateDoc, getDoc } from "firebase/firestore";
+import { getDocs, query, where,documentId, writeBatch, collection, addDoc, doc, Timestamp, updateDoc, getDoc } from "firebase/firestore";
 import { Link, Navigate } from "react-router-dom";
+import { async } from "@firebase/util";
+import Swal from "sweetalert2";
+
+
+
+
 
 const Checkout = () =>{
 
     const {cart, cartTotal, vaciarCarrito} = useContext(CartContext);
 
-    const [orderId, setOrderId] = useState(null);
+    const [orderId, setOrderId] = useState(null); 
+
+    const mostrarAlerta = () =>{
+        Swal.fire({
+            title: '¡Gracias por tu compra!',
+        text: 'tu numero de orden es: ' + orderId,
+        icon: 'success',
+        confirmButtonText: 'Ok!'
+        })
+    }
    
 
 
@@ -30,7 +45,7 @@ const Checkout = () =>{
 
     
     
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault();
         const orden = {
             items: cart,
@@ -46,33 +61,49 @@ const Checkout = () =>{
       
 
         const ordersRef = collection(db, 'orders');
+        const batch = writeBatch(db);
+        const productosRef = collection(db, 'productos');
+        // query de buqueda
+        const q = query(productosRef,where (documentId(), 'in', cart.map((item )=> item.id)));
+        // traigo la coleccion
+        const productos = await getDocs(q);
 
-        cart.forEach((item) => {
-            const docRef = doc(db, 'productos', item.id);
-
-            getDoc(docRef)
-            .then((doc) => {
-                 updateDoc(docRef,{
-                    stock: doc.data().stock - item.cantidad
-
-                 })
-            })
-        });
-
-        addDoc(ordersRef, orden)
-        .then((doc) =>{
-            console.log(doc);
-            setOrderId(doc.id);
-            vaciarCarrito();
+        const outOfStock = [];
+        // recorro los productos
+        productos.docs.forEach( (doc) => {
+            const itemInCart = cart.find((item) => item.id === doc.id);
+            if (doc.data().stock >= itemInCart.cantidad){
+                batch.update(doc.ref,{
+                    stock: doc.data().stock - itemInCart.cantidad
+                });
+            } else{
+                outOfStock.push(itemInCart);
+            }
         })
+        if (outOfStock.length === 0){
+            batch.commit()
+            .then(() => {
+                addDoc(ordersRef, orden)
+                .then((doc) =>{
+                    setOrderId(doc.id);
+                    vaciarCarrito();
+                }) 
+            })  
+           
+            
+        }else{
+            alert(`No hay stock suficiente para los siguientes productos: ${outOfStock.map((item) => item.nombre).join(', ')}`);
+        }
+
+        
+
+      
     }
     if (orderId){
-        return <div className="container my-5 oe">
-            <h1>Orden enviada, gracias por tu compra</h1>
-            <h3>Tu orden es la siguiente: {orderId}</h3>
-            <Link to="/" className="btn btn-primary">Volver al inicio</Link>
-        </div>
 
+        mostrarAlerta();
+       
+        
     }
     if(cart.length === 0){
         return <Navigate to={'/'} />
@@ -110,6 +141,10 @@ const Checkout = () =>{
                 
                 
                 <button className="btn btn-primary" type="submit">Enviar </button>
+                
+
+                   
+                
             </form>
         
             
