@@ -4,10 +4,19 @@ import { useParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import { db } from '../firebase/config'
 import {doc, getDoc} from 'firebase/firestore'
+import { css } from "@emotion/react";
+import PropagateLoader from "react-spinners/PropagateLoader";
 
+const override = css`
+  display: block;
+  margin: 50vh auto;
+  border-color: red;
+  margin-top: 250px;
+`;
 
 
 const ItemDetailContainer = () => {
+  let [color] = useState("#212529 ");
     const[productDetail, setProductDetail] = useState(null)
     const [cargando, setCargando] = useState(true )
     const {itemId}= useParams( )
@@ -27,9 +36,9 @@ const ItemDetailContainer = () => {
 
     }, [itemId])
   return (
-    <Container  className='mt-5' > 
+    <Container  className='mt-5 cargando' > 
 
-        {cargando ? <h1>Cargando...</h1> : <ItemDetail productDetail={productDetail} />}
+{cargando ? <PropagateLoader color={color} loading={cargando} css={override} size={15} />  : <ItemDetail productDetail={productDetail} />}
 
     </Container>
   )
