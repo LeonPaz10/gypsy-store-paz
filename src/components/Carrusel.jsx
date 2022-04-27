@@ -11,6 +11,7 @@ const Carrusel = () => {
       src="https://media.gucci.com/content/HeroRegularStandard_1600x675/1649777485/HeroRegularStandard_Gucci-LOVE-PARADE-2022-063_001_Default.jpg"
       alt="Moda"
     />
+    
    
   </Carousel.Item>
   <Carousel.Item interval={500}>

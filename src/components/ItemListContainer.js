@@ -23,7 +23,7 @@ const {categoryId} = useParams()
 const [listaProductos, setListaProductos] = useState([]);
 
   const [cargando, setCargando] = useState(false);
-  let [color] = useState("grey");
+  let [color] = useState("#212529 ");
 
   useEffect(() => {
     setCargando(true);
@@ -43,7 +43,7 @@ const [listaProductos, setListaProductos] = useState([]);
   }, [categoryId]);
   return (
 
-    <div>
+    <div className='fondo'>
 
    
 

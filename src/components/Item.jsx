@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom'
     
   return (
 
-    <Card style={{ width: '16rem', margin: '12px', paddingTop: '30px', marginTop: '30px' }}>
+    <Card style={{ width: '16rem', margin: '12px', paddingTop: '30px', marginTop: '30px', borderRadius: '10px', borderColor: '#212529 '}}>
             <Card.Img variant="top" src={producto.img} />
             <Card.Body>
                
