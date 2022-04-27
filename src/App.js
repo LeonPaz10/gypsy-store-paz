@@ -8,7 +8,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import { CartProvider } from './components/CartContext';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
-import Carrusel from './components/Carrusel';
+
 
 
 
@@ -20,7 +20,7 @@ function App() {
     <BrowserRouter>
 
     <Navbar/>
-    <Carrusel/>
+    
     <Routes>
       
      

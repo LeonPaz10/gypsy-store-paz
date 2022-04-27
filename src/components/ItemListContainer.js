@@ -5,6 +5,7 @@ import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase/config';
+import Carrusel from './Carrusel'
 
 
 // Can be a string as well. Need to ensure each key-value pair ends with ;
@@ -44,9 +45,13 @@ const [listaProductos, setListaProductos] = useState([]);
 
     <div>
 
-      {cargando ? <PropagateLoader color={color} loading={cargando} css={override} size={15} /> : <ItemList listaProductos={listaProductos} />}
-      
+   
 
+      {cargando ? <PropagateLoader color={color} loading={cargando} css={override} size={15} /> : <Carrusel/> }
+
+      <ItemList listaProductos={listaProductos} /> 
+      
+      
 
 
 
