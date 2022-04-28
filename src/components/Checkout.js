@@ -19,8 +19,8 @@ const Checkout = () =>{
 
     const mostrarAlerta = () =>{
         Swal.fire({
-            title: '¡Gracias por tu compra!',
-        text: 'tu numero de orden es: ' + orderId,
+            title: '¡Su compra fue efectuada correctamente!',
+        text: ' Conserve este numero de seguimiento: ' + orderId ,
         icon: 'success',
         confirmButtonText: 'Ok!'
         })
@@ -108,39 +108,74 @@ const Checkout = () =>{
     if(cart.length === 0){
         return <Navigate to={'/'} />
     }
+
+    const validateForm = () =>{
+        return values.nombre.length > 0 && values.mail.length > 0 && values.telefono.length > 0;
+    }
     return(
-        <div>
+        <div className="form-cont"> 
             <h1 className="container my-5 check">Checkout</h1>
             <hr/>
-
-            <form onSubmit={handleSubmit}>
+            <h5 className="container  ca"> * Todos los campos son obligatorios *</h5>
+            <br/>
+    
+            <form onSubmit={handleSubmit} className="form-box">
+                <label className="label">
+                    Nombre:
+                </label>
                 <input
-                className="form-control my-3 container"
+                className="form-control my-3 container form"
                 type={"text"}
                 name={"nombre"}
-                placeholder={"Nombre"}
+                placeholder={" Insertar Nombre"}
                 value={values.nombre}
                 onChange={handleChange} 
                 />
+                <label className="label">
+                    Email:
+                </label>
                  <input
-                className="form-control my-3 container"
+                className="form-control my-3 container form"
                 type={"email"}
                 name={"mail"}
                 placeholder={"E-mail"}
                 value={values.mail}
                 onChange={handleChange}
                 />
+                <label className="label">
+                    Telefono:
+                </label>
                  <input
-                className="form-control my-3 container"
+                className="form-control my-3 container  form"
                 type={"number"}
                 name={"telefono"}
                 placeholder={"Cel n°"}
                 value={values.telefono}
                 onChange={handleChange}
                 />
+
+                        <p class="pago"> Seleccionar Forma de Pago </p>
+                        <div className="centrado"> 
+                         <div className="form-check">
+                             <label className="form-check-label"> 
+                                    <input className="form-check-input" type="radio" name="formaPago" value="efectivo" />
+                                    transferencia bancaria
+
+                             </label>
+                            
+                         </div>
+                            <div className="form-check">
+                                <label className="form-check-label">
+                                    <input className="form-check-input" type="radio" name="formaPago" value="paypal" />
+                                    tarjeta de credito
+                                </label>
+                            </div>
+
+                        </div>
+                
+                {validateForm() ? <button className="btn btn-primary my-3 container" type={"submit"}>Comprar</button> : <button className="btn btn-primary my-3 container" type={"submit"} disabled>Comprar</button>}
                 
                 
-                <button className="btn btn-primary" type="submit">Enviar </button>
                 
 
                    

@@ -22,7 +22,7 @@ const Cart = () => {
                  </div>
                  : 
                  <>
-                   <h2 className="container compra">Tu compra!</h2>
+                   <h2 className="container compra">Resumen de compra</h2>
             <hr />
             {
                 cart.map((item)=> (

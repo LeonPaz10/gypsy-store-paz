@@ -156,12 +156,14 @@ button.addCart{
 }
 .compra{
  padding-top: 30px;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    
 }
 
 .check{
-  padding-top: 80px;
+  padding-top: 50px;
 justify-content: center;
+font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .oe{
  
@@ -180,4 +182,39 @@ justify-content: center;
 }
 .cargando{
   padding-top: 50px;
+}
+
+.form{
+  height: 50px;
+  width: 100px;
+}
+
+.ca{
+  font-size: x-small;
+  color: red;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form-box{
+  background-color: #0B0D11;
+  padding: 3vh;
+  border-radius: 8px;
+  margin: 5vh;
+  height: 80vh;
+  margin-bottom: 5vh;
+}
+
+.pago{
+  color: antiquewhite;
+  justify-content: center;
+}
+
+.form-check{
+  color: antiquewhite;
+  justify-content: center;
+}
+
+.label{
+  color: antiquewhite;
+  justify-content: center;
 }
