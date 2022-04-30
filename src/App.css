@@ -156,7 +156,7 @@ button.addCart{
 }
 .compra{
  padding-top: 30px;
- font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'Arial Narrow', Arial, sans-serif;
    
 }
 
@@ -201,7 +201,7 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding: 3vh;
   border-radius: 8px;
   margin: 5vh;
-  height: 64vh;
+  height: 70vh;
   margin-top: 3px;
   margin-bottom: 5vh;
 }
@@ -219,4 +219,26 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 .label{
   color: antiquewhite;
   justify-content: center;
+}
+
+.resume{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.imgItem{
+  height: 70px;
+  width: 80px;
+}
+
+@media (max-width: 600px) {
+  .resume{
+    flex-direction: column;
+  }
+  .dates {
+    display: none;
+  }
 }
