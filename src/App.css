@@ -193,6 +193,7 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: x-small;
   color: red;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
 }
 
 .form-box{
@@ -200,7 +201,8 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding: 3vh;
   border-radius: 8px;
   margin: 5vh;
-  height: 80vh;
+  height: 64vh;
+  margin-top: 3px;
   margin-bottom: 5vh;
 }
 

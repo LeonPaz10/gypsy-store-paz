@@ -112,12 +112,25 @@ const Checkout = () =>{
     const validateForm = () =>{
         return values.nombre.length > 0 && values.mail.length > 0 && values.telefono.length > 0;
     }
+   
     return(
         <div className="form-cont"> 
-            <h1 className="container my-5 check">Checkout</h1>
-            <hr/>
+       
+
+                <h1 className="container my-5 check">Checkout</h1>
+                            <hr/>
+                            {
+             values.telefono.length === 0?
+            <div>
+            
             <h5 className="container  ca"> * Todos los campos son obligatorios *</h5>
             <br/>
+            </div>
+            :
+            <></>
+       
+        }
+               
     
             <form onSubmit={handleSubmit} className="form-box">
                 <label className="label">

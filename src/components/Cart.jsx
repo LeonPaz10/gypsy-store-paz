@@ -13,12 +13,18 @@ const Cart = () => {
             {
                 cart.length === 0?
                  <div>
-                    <h2 className="text-center  my-5 pt-5">Tu carrito esta vacio :(</h2>
+
+
+
+
+                    <h2 className="text-center  my-5 pt-5">Tu carrito está vacio :(</h2>
                     <hr />
 
-                    <h4>Volver para seguir comprando!</h4>
+                    <h4>¿No sabes qué comprar?</h4>
+                   
+                    <h4>¡Miuchos productos te esperan!</h4>
                   
-                   <Link to={"/"} className="btn btn-primary">Volver</Link>
+                   <Link to={"/"} className="btn btn-primary">Volver a lista de productos</Link>
                  </div>
                  : 
                  <>
