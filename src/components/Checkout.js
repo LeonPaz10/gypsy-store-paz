@@ -19,7 +19,7 @@ const Checkout = () =>{
 
     const mostrarAlerta = () =>{
         Swal.fire({
-            title: '¡Su compra fue efectuada correctamente!',
+            title: '¡'+ values.nombre+ ', su compra fue efectuada correctamente!',
         text: ' Conserve este numero de seguimiento: ' + orderId ,
         icon: 'success',
         confirmButtonText: 'Ok!'
@@ -121,13 +121,13 @@ const Checkout = () =>{
     
             <form onSubmit={handleSubmit} className="form-box">
                 <label className="label">
-                    Nombre:
+                    Nombre y apeliido:
                 </label>
                 <input
                 className="form-control my-3 container form"
                 type={"text"}
                 name={"nombre"}
-                placeholder={" Insertar Nombre"}
+                placeholder={" Insertar Nombre y Apeliido"}
                 value={values.nombre}
                 onChange={handleChange} 
                 />
@@ -138,7 +138,7 @@ const Checkout = () =>{
                 className="form-control my-3 container form"
                 type={"email"}
                 name={"mail"}
-                placeholder={"E-mail"}
+                placeholder={"Insertar E-mail"}
                 value={values.mail}
                 onChange={handleChange}
                 />
@@ -149,29 +149,12 @@ const Checkout = () =>{
                 className="form-control my-3 container  form"
                 type={"number"}
                 name={"telefono"}
-                placeholder={"Cel n°"}
+                placeholder={"Insertar Telefono"}
                 value={values.telefono}
                 onChange={handleChange}
                 />
 
-                        <p class="pago"> Seleccionar Forma de Pago </p>
-                        <div className="centrado"> 
-                         <div className="form-check">
-                             <label className="form-check-label"> 
-                                    <input className="form-check-input" type="radio" name="formaPago" value="efectivo" />
-                                    transferencia bancaria
-
-                             </label>
-                            
-                         </div>
-                            <div className="form-check">
-                                <label className="form-check-label">
-                                    <input className="form-check-input" type="radio" name="formaPago" value="paypal" />
-                                    tarjeta de credito
-                                </label>
-                            </div>
-
-                        </div>
+                
                 
                 {validateForm() ? <button className="btn btn-primary my-3 container" type={"submit"}>Comprar</button> : <button className="btn btn-primary my-3 container" type={"submit"} disabled>Comprar</button>}
                 
