@@ -107,13 +107,17 @@ const Cart = () => {
 
                             
                         </div>
+
+                        <hr />
                     
                        
                     </div>
+                
                 ))
                 
                 
             }
+
             
             <hr />
                         <h4>TOTAL: ${cartTotal()}</h4>
