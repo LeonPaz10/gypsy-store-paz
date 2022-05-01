@@ -2,11 +2,46 @@ import { useContext } from "react"
 import { CartContext } from "./CartContext"
 import {BsFillTrashFill} from 'react-icons/bs'
 import { Link } from "react-router-dom"
+import Swal from 'sweetalert2'
 
 const Cart = () => {
 
     const {cart, cartTotal, vaciarCarrito, removeItem} = useContext(CartContext)
     console.log(cart)
+
+    const handleVaciar = () => {
+        Swal.fire({
+            title: 'Estas seguro que queres vaciar tu carrito de compras?',
+            text: "No podras revertir esta accion!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: 'red',
+            cancelButtonColor: 'grey',
+            confirmButtonText: 'Si, vaciar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                
+              Swal.fire(
+                'Vaciado!',
+                'Su carrito esta vacio.',
+                'success'
+                
+              )
+                vaciarCarrito()
+                
+            }
+          })
+          
+    }
+       const handleRemove = () => {
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Producto eliminado',
+            showConfirmButton: false,
+            timer: 1500
+          })
+       } 
     return(
         <div  className="container my-5 " >
 
@@ -65,32 +100,45 @@ const Cart = () => {
 
                             <div>
                                 
-                                <button className="btn btn-danger" onClick={ ()  => removeItem(item.id)} > <BsFillTrashFill/></button>
+                                <button className="btn btn-danger" onClick={ ()  =>handleRemove(removeItem(item.id))}  > <BsFillTrashFill/></button>
+
+                                
                             </div>
+
                             
                         </div>
                     
                        
-                        <hr />
                     </div>
                 ))
+                
+                
             }
-            <h4>TOTAL: ${cartTotal()}</h4>
+            
             <hr />
-            <button className="btn btn-danger " id="vaciar" onClick={vaciarCarrito}><b>Vaciar carrito</b></button>
-            <br />
-            <br />
-            <Link className="btn btn-success " id="terminar" to={"/checkout"} ><b>Terminar mi compra</b></Link>
-            <br />
-            <br />
-                <Link to="/" className='btn btn-primary ' id="seguir">
+                        <h4>TOTAL: ${cartTotal()}</h4>
+                         <hr />
+          
 
-                    <span ><b>Seguir comprando</b></span>
+                <div className=" btns">
 
-                </Link>
-                <br />
-                <br />
-                 </>
+                    <button className="btn btn-danger vaciar" id="vaciar" onClick={handleVaciar}><b>Vaciar carrito</b></button>
+                        <br />
+                        <br />
+                    <Link className="btn btn-success " id="terminar" to={"/checkout"} ><b>Terminar mi compra</b></Link>
+                        <br />
+                        <br />
+                    <Link to="/" className='btn btn-primary ' id="seguir">
+
+                            <span ><b>Seguir comprando</b></span>
+
+                    </Link>
+                        <br />
+                        <br />
+
+                </div>
+        
+            </>
             }
 
           

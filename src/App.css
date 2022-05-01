@@ -241,4 +241,19 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   .dates {
     display: none;
   }
+  .btns{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+   }
+   
 }
+
+
+
+
+
+
+
+
+
