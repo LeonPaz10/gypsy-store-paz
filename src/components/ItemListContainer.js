@@ -49,6 +49,8 @@ const [listaProductos, setListaProductos] = useState([]);
 
       {cargando ? <PropagateLoader color={color} loading={cargando} css={override} size={15} /> : <Carrusel/> }
 
+      <a name="ancla-1"></a>
+
       <ItemList listaProductos={listaProductos} /> 
       
       

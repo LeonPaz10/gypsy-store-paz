@@ -45,12 +45,75 @@
   }
 }
 
-/* Navbar iconos*/
+/* Navbar /iconos*/
 
-.iconos-navbar{
+:root{
+   --color-1: WHITE;
+    --color-2: #282c34;
+}
+
+header{
+  font-family: serif;
+
+
+
+}
+.header{
+   background-color: var(--color-1);
+   padding: 12px 0;
+   line-height: 1.2;
+  
+}
+
+.header .logo,
+.header .nav{
+  padding: 0 15px;
+}
+.row{
   display: flex;
-  flex-direction: row;
-  background-color: #282c34;
+  flex-wrap: wrap;
+}
+.containerr{
+  max-width: 1180px;
+  
+  margin: auto;
+
+}
+.aling-items-center{
+  align-items: center;
+}
+.justify-content-between{
+  justify-content: space-between;
+}
+ul{
+  list-style: none;
+}
+
+.header .nav ul li{
+  display: inline-block;
+  margin-left: 230px;
+
+}
+.header .logo a{
+  font-size: 30px;
+  color: var(--color-2);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.header .nav ul li a{
+  color: black;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 0;
+  transition: all 0.5s ease;
+}
+.header .nav ul li a.active,
+.header .nav ul li a:hover{
+  color:grey;
+  text-decoration: none;
 }
 
 /*tipo de letras*/
@@ -138,6 +201,9 @@ button.addCart{
 .verMas{
  display: flex;
  justify-content: center;
+ background-image: url("https://previews.123rf.com/images/tatianakost/tatianakost1412/tatianakost141200076/34561912-esquema-ropa-femenina-de-moda-y-complementos-sin-fisuras-patr%C3%B3n-de-desgaste-incompleto-style-woman-e.jpg");
+ width: 100%;
+
 }
 
 /* .boton{
@@ -175,10 +241,11 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .carrusel{
-  padding-top: 50px;
+  padding-top:0px;
+  box-shadow: 10px 10px 30px #00000035;
 }
 .fondo{
-  background-color:  #0B0D11;
+  background-image: url("https://previews.123rf.com/images/tatianakost/tatianakost1412/tatianakost141200076/34561912-esquema-ropa-femenina-de-moda-y-complementos-sin-fisuras-patr%C3%B3n-de-desgaste-incompleto-style-woman-e.jpg");
 }
 .cargando{
   padding-top: 50px;
@@ -246,6 +313,48 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     flex-direction: row-reverse;
     justify-content: center;
    }
+
+   
+
+.header{
+   background-color: var(--color-1);
+   padding: 1px 0;
+   line-height: 1,5;
+  
+}
+
+.header .logo,
+.header .nav{
+  padding-top: 5px;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.containerr{
+  max-width: 1180px;
+  
+  margin: auto;
+
+}
+
+ul{
+  list-style: none;
+}
+
+.header .nav ul li{
+  display: inline-flex;
+  margin-left: 50px;
+
+}
+.header .logo a{
+  font-size: 30px;
+  color: var(--color-2);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+
    
 }
 
