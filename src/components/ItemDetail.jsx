@@ -38,9 +38,9 @@ const ItemDetail = ({productDetail}) => {
       navigate(-1)
     }
   return (
-   <div className='verMas' >
+   <div className=' verMas' >
      
-    <Card style={{ width: '16rem', margin: '12px', paddingTop: '30px', marginTop: '30px', borderRadius: '10px', borderColor: '#212529 ' }}>
+    <Card style={{ width: '16rem', margin: '12px', paddingTop: '30px', marginTop: '30px',borderRadius: '10px', borderColor: '#212529 ' }}>
             <Card.Img variant="top" src={img} />
             <Card.Body>
                

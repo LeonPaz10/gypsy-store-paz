@@ -47,85 +47,48 @@
 
 /* Navbar /iconos*/
 
-:root{
-   --color-1: WHITE;
-    --color-2: #282c34;
-}
-
-header{
-  font-family: serif;
-
-
-
-}
-.header{
-   background-color: var(--color-1);
-   padding: 12px 0;
-   line-height: 1.2;
-  
-}
-
-.header .logo,
-.header .nav{
-  padding: 0 15px;
-}
-.row{
+.logo{
   display: flex;
-  flex-wrap: wrap;
-}
-.containerr{
-  max-width: 1180px;
-  
-  margin: auto;
-
-}
-.aling-items-center{
+  justify-content: center;
   align-items: center;
+  margin-top: 10px;
+
+ 
 }
-.justify-content-between{
-  justify-content: space-between;
+.logoLetra{
+  font-size: 60px;
+  color: black;
+  text-decoration: none;
 }
+.logoLetra:hover{
+  color: #585658;
+}
+/* Navbar */
+ul li a {
+ text-decoration: none;
+ font-size: 30px;
+ font-variant: small-caps;
+ font-feature-settings: "c2pc";
+ margin: 3px;
+  color: black;
+  
+ 
+}
+ul li a:hover{
+  color: #585658;
+}
+ 
 ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
   list-style: none;
 }
 
-.header .nav ul li{
-  display: inline-block;
-  margin-left: 230px;
 
-}
-.header .logo a{
-  font-size: 30px;
-  color: var(--color-2);
-  text-decoration: none;
-  text-transform: capitalize;
-}
-.header .nav ul li a{
-  color: black;
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 10px 0;
-  transition: all 0.5s ease;
-}
-.header .nav ul li a.active,
-.header .nav ul li a:hover{
-  color:grey;
-  text-decoration: none;
-}
 
-/*tipo de letras*/
 
-.offcanvas-title{
-  font-family: 'Gilda Display', serif;
-}
-.navbar-brand{
-  font-family: 'Gilda Display', serif;
-  
-
-}
 
 .button-gold{
   border-color: white;
@@ -189,20 +152,13 @@ button.addCart{
   margin-top: 300px;
 }
 
-.contacto{
-  background-color: #61dafb;
-  padding-top: 4rem;
-}
-
-.iconos-navbar{
-  background-color: #282c34;
-}
 
 .verMas{
  display: flex;
  justify-content: center;
  background-image: url("https://previews.123rf.com/images/tatianakost/tatianakost1412/tatianakost141200076/34561912-esquema-ropa-femenina-de-moda-y-complementos-sin-fisuras-patr%C3%B3n-de-desgaste-incompleto-style-woman-e.jpg");
  width: 100%;
+ 
 
 }
 
@@ -215,10 +171,64 @@ button.addCart{
 } */
 
 .cart-widget{
-  font-size: 25px;
-  padding-left: 5px;
-  padding-right: 5px;
-   
+  font-size: 35px;
+  color: #0B0D11;
+}
+.cart-widget:hover{
+  color: #9a9fa8;
+}
+
+.shopping
+{
+	display: inline-flex;
+	margin-left: 111px;
+	padding-right: 161px;
+	-webkit-transform: translateY(-2px);
+	-moz-transform: translateY(-2px);
+	-ms-transform: translateY(-2px);
+	-o-transform: translateY(-2px);
+	transform: translateY(-2px);
+}
+.shopping a
+{
+	display: inline-block;
+	margin-right: 10px;
+}
+.shopping a:last-child
+{
+	margin-right: 0;
+}
+.cart_num_container,
+.star_num_container
+{
+	position: absolute;
+	top: 23px;
+	left: -5px;
+	width: 20px;
+	height: 20px;
+	background: black;
+	border-radius: 50%;
+}
+.cart_num_inner,
+.star_num_inner
+{
+	width: 100%;
+	height: 100%;
+}
+.cart_num,
+.star_num
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-size: 15px;
+	font-weight: 600;
+	color: #FFFFFF;
 }
 .compra{
  padding-top: 30px;
@@ -313,47 +323,103 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     flex-direction: row-reverse;
     justify-content: center;
    }
-
+   /*Logo */
+   .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  
    
+  }
+  .logoLetra{
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+  }
+  .logoLetra:hover{
+    color: #585658;
+  }
 
-.header{
-   background-color: var(--color-1);
-   padding: 1px 0;
-   line-height: 1,5;
+  /*Menu */
   
-}
+  ul li a {
+   text-decoration: none;
+   font-size: 13px;
+   
+  }
+   
+  ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    list-style: none;
+  }
 
-.header .logo,
-.header .nav{
-  padding-top: 5px;
-}
-.row{
-  display: flex;
-  flex-wrap: wrap;
-}
-.containerr{
-  max-width: 1180px;
+  /*cart */
+  .cart-widget{
+    font-size: 20px;
+    color: #0B0D11;
+  }
+  .cart-widget:hover{
+    color: #9a9fa8;
+  }
   
-  margin: auto;
+  .shopping
+  {
+    display: inline-flex;
+    margin-left: 111px;
+    padding-right: 161px;
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  .shopping a
+  {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .shopping a:last-child
+  {
+    margin-right: 0;
+  }
+  .cart_num_container,
+  .star_num_container
+  {
+    position: absolute;
+    top: 15px;
+    left: -1px;
+    width: 13px;
+    height: 13px;
+    background: black;
+    border-radius: 50%;
+  }
+  .cart_num_inner,
+  .star_num_inner
+  {
+    width: 100%;
+    height: 100%;
+  }
+  .cart_num,
+  .star_num
+  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
 
-}
-
-ul{
-  list-style: none;
-}
-
-.header .nav ul li{
-  display: inline-flex;
-  margin-left: 50px;
-
-}
-.header .logo a{
-  font-size: 30px;
-  color: var(--color-2);
-  text-decoration: none;
-  text-transform: capitalize;
-}
-
+  
 
    
 }
