@@ -311,6 +311,10 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   width: 80px;
 }
 
+.form-cont{
+  background-image: url("https://previews.123rf.com/images/tatianakost/tatianakost1412/tatianakost141200076/34561912-esquema-ropa-femenina-de-moda-y-complementos-sin-fisuras-patr%C3%B3n-de-desgaste-incompleto-style-woman-e.jpg");
+}
+
 @media (max-width: 600px) {
   .resume{
     flex-direction: column;
@@ -322,6 +326,7 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
+    padding-bottom: 5px;
    }
    /*Logo */
    .logo{
