@@ -6,6 +6,7 @@ import CartWidjet from './CartWidjet'
 
 
 
+
 const Navbar = () => {
   return (
    <header className='container'>
@@ -23,16 +24,29 @@ const Navbar = () => {
             <div className='container menu'>
                   
                   <nav className='container navegacion'>
-                      <ul className='container d-flex justify-content-around' >
-                        <li><a href=""><Link to={"/"} className="">Home </Link></a></li>
-                        <li><a href="#ancla-1"> Productos </a></li>
+                      <ul className='container d-flex justify-content-around menu-horizontal' >
+                        <li><a ><Link to={"/"} className="">Home </Link></a></li>
+                        <li><a> Productos </a>
+
+                          <ul className='menu-vertical'>
+                            <li><a href="#ancla-1"><Link className="" to="/category/remeras">Remeras</Link></a></li>
+                            <li><a href=""><Link className="" to="/category/zapatos">Zapatos</Link></a></li>
+                            <li><a href=""><Link className="" to="/category/cintos">Cintos</Link></a></li>
+                          </ul>
+                        
+                        </li>
                         <li><a href=""><Link to={"/"}> Contacto</Link></a></li>
                       </ul>
                   </nav>
             </div>
         </div>
 
+      
+
+       
+
    </header>
+   
   )
 }
 

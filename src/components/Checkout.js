@@ -92,7 +92,13 @@ const Checkout = () =>{
            
             
         }else{
-            alert(`No hay stock suficiente para los siguientes productos: ${outOfStock.map((item) => item.nombre).join(', ')}`);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `No hay stock suficiente para los siguientes productos: ${outOfStock.map((item) =>  item.nombre).join(', ')}`,
+                
+              })
+           
         }
 
         
