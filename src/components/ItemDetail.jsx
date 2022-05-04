@@ -55,7 +55,7 @@ const ItemDetail = ({productDetail}) => {
                 </Card.Text>
 
                 <Card.Text>
-                   <h6>Stock disponible: {stock} </h6>  
+                   <h6> <b>Stock disponible: {stock} </b></h6>  
                 </Card.Text>
 
                 {stock === 0 && <h6 style={{color: 'red', fontWeight: '700'}}>Sin stock  </h6>} 

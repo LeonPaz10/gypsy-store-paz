@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom'
   return (
 
     <Card style={{ width: '16rem', margin: '12px', paddingTop: '30px', marginTop: '30px', borderRadius: '10px', borderColor: '#212529 '}}>
-            <Card.Img variant="top" src={producto.img} />
+            <Card.Img variant="top" src={producto.img} className='img' />
             <Card.Body>
                
                
@@ -28,9 +28,7 @@ import { Link } from 'react-router-dom'
                 </Card.Text>
 
                 <Card.Title>{producto.nombre}</Card.Title>
-                <Card.Text>
-                    {producto.description} 
-                </Card.Text>
+               
                 
                    <Link to={`/item/${producto.id}`}><Button variant="primary">Ver más</Button> </Link> 
                     

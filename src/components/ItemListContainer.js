@@ -8,6 +8,7 @@ import { db } from '../firebase/config';
 import Carrusel from './Carrusel'
 
 
+
 // Can be a string as well. Need to ensure each key-value pair ends with ;
 const override = css`
   display: block;
@@ -49,9 +50,9 @@ const [listaProductos, setListaProductos] = useState([]);
 
       {cargando ?
        <PropagateLoader color={color} loading={cargando} css={override} size={15} /> 
-      :  <Carrusel/>}
+      :  <Carrusel/> }
        <ItemList listaProductos={listaProductos} />
-
+       
     
 
      

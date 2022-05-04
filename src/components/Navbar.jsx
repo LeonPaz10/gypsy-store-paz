@@ -35,7 +35,7 @@ const Navbar = () => {
                           </ul>
                         
                         </li>
-                        <li><a href=""><Link to={"/"}> Contacto</Link></a></li>
+                        <li><a href="https://www.instagram.com/gyppsy_store/"> Contacto </a></li>
                       </ul>
                   </nav>
             </div>
