@@ -252,6 +252,7 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .carrusel{
+  display: none;
   padding-top:0px;
   box-shadow: 10px 10px 30px #00000035;
 }
@@ -425,6 +426,11 @@ font-family:    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #FFFFFF;
   }
 
+  .carrusel{
+    display: contents;
+    padding-top:0px;
+    box-shadow: 10px 10px 30px #00000035;
+  }
   
 
    
